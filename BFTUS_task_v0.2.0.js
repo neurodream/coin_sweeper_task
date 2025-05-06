@@ -2,7 +2,6 @@
  * Demo_Changes_Lutz *
  **************************/
 
-import { PsychoJS } from 'https://pavlovia.org/lib/psychojs/core-2023.2.js';
 import * as visual from 'https://pavlovia.org/lib/psychojs/visual-2023.2.js';
 import * as sound from 'https://pavlovia.org/lib/psychojs/sound-2023.2.js';
 import * as util from 'https://pavlovia.org/lib/psychojs/util-2023.2.js';
