@@ -1,23 +1,46 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>demo_changes_lutz [PsychoPy]</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.1/jquery-ui.min.css">
-    <link rel="stylesheet" href="./lib/psychojs-2023.2.3.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- external libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/preloadjs@1.0.1/lib/preloadjs.min.js"></script>
-    <!-- experiment -->
-    <script src="./BFTUS_task_v0.2.0.js" type="module"></script>
-    <!-- legacy browsers -->
-    <script src="./lib/psychojs-2023.2.3.iife.js" nomodule></script>
-    <script src="./BFTUS_task_v0.2.0.js" nomodule></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFTUS_task_v0.2.0</title>
+    <!-- PsychoJS core libraries from Pavlovia CDN -->
+    <script src="https://pavlovia.org/lib/core-2023.2.js"></script>
+    <script src="https://pavlovia.org/lib/data-2023.2.js"></script>
+    <script src="https://pavlovia.org/lib/util-2023.2.js"></script>
+    <script src="https://pavlovia.org/lib/visual-2023.2.js"></script>
+    <script src="https://pavlovia.org/lib/sound-2023.2.js"></script>
+    <script src="https://pavlovia.org/lib/psychojs-2023.2.3.js"></script>
+    <!-- Your experiment JS -->
+    <script src="BFTUS_task_v0.2.0.js"></script>
+</head>
+<body>
+    <script>
+        // Setup PsychoJS
+        psychoJS = new PsychoJS({ debug: true });
+        psychoJS.openWindow({
+            fullscr: true,
+            color: new util.Color('black'),
+            units: 'height'
+        });
+
+        expName = 'BFTUS_task_v0.2.0';  // experiment name
+        expInfo = {'participant': '', 'session': '001'};
+
+        // Get participant info
+        psychoJS.schedule(psychoJS.gui.DlgFromDict({
+            dictionary: expInfo,
+            title: expName
+        }));
+
+        // Start the experiment
+        psychoJS.schedule(function() {
+            return BFTUS_task_v0_2_0();  // name of main function in your JS file
+        });
+
+        psychoJS.start({
+            expName: expName,
+            expInfo: expInfo
+        });
+    </script>
+</body>
 </html>
