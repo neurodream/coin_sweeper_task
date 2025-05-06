@@ -2,10 +2,11 @@
  * Demo_Changes_Lutz *
  **************************/
 
-import * as visual from 'https://pavlovia.org/lib/psychojs/visual-2023.2.js';
-import * as sound from 'https://pavlovia.org/lib/psychojs/sound-2023.2.js';
-import * as util from 'https://pavlovia.org/lib/psychojs/util-2023.2.js';
-import * as data from 'https://pavlovia.org/lib/psychojs/data-2023.2.js';
+import { PsychoJS } from './lib/core.js';
+import * as visual from './lib/visual.js';
+import * as sound from './lib/sound.js';
+import * as util from './lib/util.js';
+import * as data from './lib/data.js';
 
 const { PsychoJS } = core;
 const { TrialHandler, MultiStairHandler } = data;
